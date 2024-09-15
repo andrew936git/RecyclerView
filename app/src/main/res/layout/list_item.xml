@@ -6,11 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
-        android:orientation="horizontal"
+        android:background="@color/black"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/_6dp"
+        app:cardElevation="@dimen/_6dp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,52 +22,34 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_110dp"
-            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/_6dp"
-            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
             android:layout_weight="3"
-            >
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout2">
 
             <TextView
                 android:id="@+id/nameTV"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_6dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
+                android:layout_gravity="center_vertical"
+                android:layout_weight="6"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/descriptionTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_6dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_6dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            >
 
             <ImageView
                 android:id="@+id/imageViewIV"
                 android:layout_width="@dimen/_100dp"
                 android:layout_height="@dimen/_100dp"
                 android:layout_margin="@dimen/_6dp"
+                android:layout_weight="1"
                 android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
 
 
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

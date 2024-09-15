@@ -10,9 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 class CustomAdapter(private val list: MutableList<Product>):
     RecyclerView.Adapter<CustomAdapter.ProductViewHolder>() {
 
+        private var onProductClickListener: OnProductClickListener? = null
+
+        interface OnProductClickListener{
+            fun onProductClick(product: Product, position: Int)
+        }
+
     class ProductViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val nameTV: TextView = itemView.findViewById(R.id.nameTV)
-        val descriptionTV: TextView = itemView.findViewById(R.id.descriptionTV)
         val imageViewIV: ImageView = itemView.findViewById(R.id.imageViewIV)
     }
 
@@ -27,7 +32,15 @@ class CustomAdapter(private val list: MutableList<Product>):
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = list[position]
         holder.nameTV.text = product.name
-        holder.descriptionTV.text = product.description
         holder.imageViewIV.setImageResource(product.image)
+        holder.itemView.setOnClickListener{
+            if (onProductClickListener != null){
+                onProductClickListener!!.onProductClick(product, position)
+            }
+        }
+    }
+
+    fun setOnProductClickListener(onProductClickListener: OnProductClickListener){
+        this.onProductClickListener = onProductClickListener
     }
 }

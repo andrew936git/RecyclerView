@@ -3,4 +3,8 @@
     <string name="textViewMainActivity">Мой гардероб</string>
     <string name="buttonText">К гардеробу</string>
     <string name="exit_menu_title">Выход</string>
+    <string name="back_menu_title">Назад</string>
+    <string name="nameHint">Наименование:</string>
+    <string name="descriptionHint">Описание:</string>
+    <string name="edit_name_hint">Введите название</string>
 </resources>
