@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="textViewMainActivity">Мой гардероб</string>
+    <string name="buttonText">К гардеробу</string>
+    <string name="exit_menu_title">Выход</string>
+</resources>
